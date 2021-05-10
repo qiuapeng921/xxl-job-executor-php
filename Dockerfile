@@ -34,7 +34,7 @@ RUN set -ex \
     && chmod +x /usr/local/bin/composer \
     && composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 
-ADD ./xxl-job-executor-sample-springboot-2.3.0.jar /opt/xxl-job-executor-sample-springboot.jar
+ADD ./xxl-job-executor-sample-springboot-2.2.0.jar /opt/xxl-job-executor-sample-springboot.jar
 
 ADD docker-entrypoint.sh /
 
