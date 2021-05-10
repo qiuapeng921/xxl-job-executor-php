@@ -1,13 +1,7 @@
 #!/usr/bin/env bash
 
-echo "执行的文件名：$0";
-echo "第一个参数为：$1";
-echo "第二个参数为：$2";
-
-### admin地址
-XXl_ADMIN_HOST=$1
-### 服务名称
-SERVICE_NAME=$2
+echo "第一个参数为：$XXl_ADMIN_HOST";
+echo "第二个参数为：$SERVICE_NAME";
 
 #启动php-fpm
 mkdir -p /run/php

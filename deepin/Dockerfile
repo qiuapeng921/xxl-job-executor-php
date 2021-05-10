@@ -29,8 +29,8 @@ RUN apt install composer libz-dev \
     php7.3-zip \
     php7.3-opcache -y
 
-ADD xxl-job-executor-sample-springboot-2.3.0.jar /opt/xxl-job-executor-sample-springboot.jar
+ADD ../xxl-job-executor-sample-springboot-2.3.0.jar /opt/xxl-job-executor-sample-springboot.jar
 
 ADD docker-entrypoint.sh /
 
-ENTRYPOINT ["sh","-c","/docker-entrypoint.sh $XXl_ADMIN_HOST $SERVICE_NAME"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
