@@ -8,6 +8,8 @@ LABEL maintainer="qiuapeng <qiuapeng@vchangyi.com>" version="1.0"
 ### 替换镜像源安装软件
 RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
     && sed -i 's|deb http://security.debian.org|#deb http://security.debian.org|g' /etc/apt/sources.list \
+    && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo 'Asia/Shanghai' >/etc/timezone \
     && apt update
 
 RUN apt install composer libz-dev \
