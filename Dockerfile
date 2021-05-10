@@ -21,7 +21,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 RUN set -ex \
     && apk update \
-    && apk add --no-cache libstdc++ wget openssl \
+    && apk add --no-cache libstdc++ wget openssl bash \
     libmcrypt-dev libzip-dev libpng-dev libc-dev zlib-dev \
     freetype-dev libjpeg-turbo-dev libpng-dev \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/ \
