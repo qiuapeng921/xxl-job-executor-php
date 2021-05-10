@@ -10,7 +10,7 @@ RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
     && sed -i 's|deb http://security.debian.org|#deb http://security.debian.org|g' /etc/apt/sources.list \
     && apt update
 
-RUN apt install libz-dev \
+RUN apt install composer libz-dev \
     libpcre3-dev \
     libjpeg-dev \
     libpng-dev \
