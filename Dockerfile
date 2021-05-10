@@ -1,6 +1,7 @@
 FROM openjdk:8-jre-slim
 
-ENV xxlJobAdminHost=""
+ENV XXl_ADMIN_HOST="127.0.0.1:8080"
+ENV SERVICE_NAME="test"
 
 LABEL maintainer="qiuapeng <qiuapeng@vchangyi.com>" version="1.0"
 
@@ -26,8 +27,8 @@ RUN apt install libz-dev \
     php7.3-zip \
     php7.3-opcache -y
 
-ADD xxl-job-executor-sample-springboot-2.2.0.jar /opt/
+ADD xxl-job-executor-sample-springboot-2.3.0.jar /opt/xxl-job-executor-sample-springboot.jar
 
 ADD docker-entrypoint.sh /
 
-CMD ["/docker-entrypoint.sh","$xxlJobAdminHost"]
+ENTRYPOINT ["sh","-c","/docker-entrypoint.sh $XXl_ADMIN_HOST $SERVICE_NAME"]
