@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 echo "第一个参数为：$XXl_ADMIN_HOST";
 echo "第二个参数为：$SERVICE_NAME";
