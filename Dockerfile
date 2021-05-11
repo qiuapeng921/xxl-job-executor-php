@@ -17,7 +17,8 @@ ENV SERVICE_NAME="test"
 
 ### 替换镜像源安装软件
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
-    && echo 'Asia/Shanghai' >/etc/timezone
+    && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo "Asia/Shanghai" > /etc/timezone
 
 RUN set -ex \
     && apk update \
